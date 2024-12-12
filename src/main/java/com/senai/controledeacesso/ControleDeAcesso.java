@@ -314,6 +314,9 @@ public class ControleDeAcesso {
         }
     }
 
+    public static void verAcessoDeUmUsuario(){
+
+    }
 
     public static void deletarRegistroDeAcesso(){
         matrizRegistrosDeAcesso = new String[][]{{"","",""}};
