@@ -73,7 +73,7 @@ public class ControleDeAcesso {
                 case 3: atualizarUsuario(); break;
                 case 4: deletarUsuario(); break;
                 case 5: aguardarCadastroDeIdAcesso(); break;
-                case 6:  break;
+                case 6: verificarAcesso(); break;
                 case 7: deletarRegistroDeAcesso();
                     break;
                 case 8: System.out.println("PROGRAMA FINALIZADO!!!!"); break;
@@ -180,6 +180,8 @@ public class ControleDeAcesso {
         }
     }
 
+    
+
     // Funções de CRUD
     private static void exibirCadastro() {
         StringBuilder tabelaCadastro = new StringBuilder();
@@ -217,6 +219,34 @@ public class ControleDeAcesso {
         matrizCadastro = novaMatriz;
         salvarDadosNoArquivo();
     }
+
+    //não consegui testar no notebook.
+    public static void verificarAcesso() {
+        System.out.println("Selecione o usuário para visualizar os registros de acesso:");
+        for (int i = 1; i < matrizCadastro.length; i++) {
+            System.out.println(matrizCadastro[i][0] + " - " + matrizCadastro[i][2]);  // Exibe o ID e Nome
+        }
+
+        System.out.print("Digite o ID do usuário: ");
+        int idUsuarioEscolhido = scanner.nextInt();
+
+        // Buscar e exibir os registros de acesso desse usuário
+        boolean usuarioEncontrado = false;
+        System.out.println("Registros de acesso do usuário:");
+
+
+        for (String[] registro : matrizRegistrosDeAcesso) {
+            if (registro[0].equals(matrizCadastro[idUsuarioEscolhido][2])) {
+                System.out.println("Hora: " + registro[1] + " - Imagem: " + registro[2]);
+                usuarioEncontrado = true;
+            }
+        }
+
+        if (!usuarioEncontrado) {
+            System.out.println("Nenhum registro de acesso encontrado para o usuário com ID " + idUsuarioEscolhido + ".");
+        }
+    }
+
 
     private static void atualizarUsuario() {
         exibirCadastro();
