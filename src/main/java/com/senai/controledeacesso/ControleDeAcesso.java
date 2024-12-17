@@ -220,17 +220,15 @@ public class ControleDeAcesso {
         salvarDadosNoArquivo();
     }
 
-    //não consegui testar no notebook.
     public static void verificarAcesso() {
         System.out.println("Selecione o usuário para visualizar os registros de acesso:");
         for (int i = 1; i < matrizCadastro.length; i++) {
-            System.out.println(matrizCadastro[i][0] + " - " + matrizCadastro[i][2]);  // Exibe o ID e Nome
+            System.out.println(matrizCadastro[i][0] + " - " + matrizCadastro[i][2]);
         }
 
         System.out.print("Digite o ID do usuário: ");
         int idUsuarioEscolhido = scanner.nextInt();
 
-        // Buscar e exibir os registros de acesso desse usuário
         boolean usuarioEncontrado = false;
         System.out.println("Registros de acesso do usuário:");
 
