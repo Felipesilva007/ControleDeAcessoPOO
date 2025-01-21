@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    static ArrayList<Usuario> listaUsuarios=new ArrayList<>();
+    static ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+
     public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         int opcao;
 
-        String menu= """
+        String menu = """
                 -----------------------------------
                 | 1-Exibir Registro.
                 | 2-Criar Cadastro.
@@ -23,11 +24,11 @@ public class Main {
                 """;
         do {
             System.out.println(menu);
-            opcao=scanner.nextInt();
+            opcao = scanner.nextInt();
             scanner.nextLine();
-            switch (opcao){
+            switch (opcao) {
                 case 1:
-
+                    listaUsuarios();
                     break;
                 case 2:
                     break;
@@ -43,11 +44,12 @@ public class Main {
                     break;
                 default:
             }
-        }while (opcao !=7);
+        } while (opcao != 7);
     }
-    static void listaUsuarios(){
-        for (Usuario usuarios : listaUsuarios){
-            System.out.println(listaUsuarios.indexOf(usuarios)+1+ "-" +usuarios);
+
+    static void listaUsuarios() {
+        for (Usuario usuarios : listaUsuarios) {
+            System.out.println(listaUsuarios.indexOf(usuarios) + 1 + "-" + usuarios);
         }
     }
 
