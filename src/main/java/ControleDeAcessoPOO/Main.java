@@ -30,7 +30,7 @@ public class Main {
             scanner.nextLine();
             switch (opcao) {
                 case 1:
-                    listarUsuarios();
+                    exibirLista();
                     break;
                 case 2:
 
@@ -55,6 +55,10 @@ public class Main {
         for (Usuario usuarios : listaUsuarios) {
             System.out.println(listaUsuarios.indexOf(usuarios) + 1 + "-" + usuarios);
         }
+    }
+    static void exibirLista(){
+        listarUsuarios();
+        System.out.println(listaUsuarios);
     }
 static void cadastrarUsuarios(){
     System.out.print("Digite a quantidade de usuarios que deseja cadastrar:");
