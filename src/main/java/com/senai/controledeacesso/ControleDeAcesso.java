@@ -29,8 +29,7 @@ public class ControleDeAcesso {
     static ServidorHTTPS servidorHTTPS;
     static Scanner scanner = new Scanner(System.in);
     static ExecutorService executorIdentificarAcessos = Executors.newFixedThreadPool(4);
-    static ExecutorService
-            executorCadastroIdAcesso = Executors.newSingleThreadExecutor();
+    static ExecutorService executorCadastroIdAcesso = Executors.newSingleThreadExecutor();
 
     public static void main(String[] args) {
         verificarEstruturaDeDiretorios();

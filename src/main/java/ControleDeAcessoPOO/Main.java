@@ -1,9 +1,15 @@
 package ControleDeAcessoPOO;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Scanner;
 
 public class Main {
+    private static final File pastaControleDeAcesso = new File(System.getProperty("user.name"), "ControleDeAcesso");
+    private static final File arquivoBancoDados = new File(pastaControleDeAcesso, "bancoDados.txt");
+    private static final File registroAcesso = new File(pastaControleDeAcesso, "imagens");
+
     static ArrayList<Usuario> listaUsuarios = new ArrayList<>();
 
     static Scanner scanner = new Scanner(System.in);
@@ -53,19 +59,24 @@ public class Main {
 
     static void listarUsuarios() {
         for (Usuario usuarios : listaUsuarios) {
+
             System.out.println(listaUsuarios.indexOf(usuarios) + 1 + "-" + usuarios);
+
         }
     }
-    static void exibirLista(){
-        listarUsuarios();
-        System.out.println(listaUsuarios);
-    }
-static void cadastrarUsuarios(){
-    System.out.print("Digite a quantidade de usuarios que deseja cadastrar:");
-    int qtdUsuarios = scanner.nextInt();
-    scanner.nextLine();
 
-}
+    static void exibirLista() {
+        System.out.println(listaUsuarios);
+        listarUsuarios();
+        }
+
+    static void cadastrarUsuarios() {
+        System.out.print("Digite a quantidade de usuarios que deseja cadastrar:");
+        int qtdUsuarios = scanner.nextInt();
+        scanner.nextLine();
+
+    }
+
     static void atualizarUsuarios() {
         listarUsuarios();
         System.out.println("Escolha um id para atualizar o cadastro:");
