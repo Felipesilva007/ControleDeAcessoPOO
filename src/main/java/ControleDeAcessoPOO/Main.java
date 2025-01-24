@@ -18,7 +18,7 @@ public class Main {
             String menu = """
                     _________________________________________________________
                     |   Escolha uma opção:                                   |
-                    |       1 - Exibir cadastro completo                     |
+                    |       1 - Exibir cadastros completos                   |
                     |       2 - Inserir novo cadastro                        |
                     |       3 - Atualizar cadastro por id                    |
                     |       4 - Deletar um cadastro por id                   |
@@ -47,7 +47,7 @@ public class Main {
                     break;
 
                 case 4:
-
+                    System.out.println("Escolha um id de usuário para ser deletado do sistema: ");
                     break;
 
                 case 5:
@@ -73,6 +73,9 @@ public class Main {
 
     }
     public static void cadastrarUsuario(){
+        System.out.println("Digite o id da nova pessoa cadastrada:");
+        String idAcesso = scanner.nextLine();
+
         System.out.println("Digite o nome da pessoa cadastrada:");
         String nome = scanner.nextLine();
 
@@ -82,7 +85,8 @@ public class Main {
         System.out.println("Digite o telefone da pessoa cadastrada");
         String telefone = scanner.nextLine();
 
-        Usuario usuario = new Usuario(nome,email,telefone);
+
+        Usuario usuario = new Usuario(nome,email,telefone,idAcesso);
 
         listaDeUsuarios.add(usuario);
 
@@ -92,7 +96,7 @@ public class Main {
         StringBuilder tabelaCadastro = new StringBuilder();
 
         for (Usuario usuario : listaDeUsuarios) {
-            tabelaCadastro.append(String.format("%-15s | %-20s | %-10s", usuario.nome, usuario.email, usuario.telefone));
+            tabelaCadastro.append(String.format("| %5s | %-15s | %-15s | %-10s",usuario.idAcesso, usuario.nome, usuario.email, usuario.telefone));
             tabelaCadastro.append("\n");
         }
         System.out.println(tabelaCadastro);
