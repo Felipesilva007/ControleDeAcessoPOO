@@ -47,7 +47,8 @@ public class Main {
                     break;
 
                 case 4:
-                    System.out.println("Escolha um id de usuário para ser deletado do sistema: ");
+                    deletarCadastroID();
+                    exibirListaDeUsuarios();
                     break;
 
                 case 5:
@@ -63,7 +64,7 @@ public class Main {
                     break;
 
                 case 8:
-                    System.out.println("Fim do programa.");
+                    System.out.println("Você saiu da página.");
                     break;
 
                 default:
@@ -101,6 +102,28 @@ public class Main {
         }
         System.out.println(tabelaCadastro);
     }
+
+    public static void deletarCadastroID(){
+        System.out.println("Escolha um ID de um usuário para deletar: ");
+        String idParaDeletar = scanner.nextLine();
+
+        Usuario usuarioParaDeletar = null;
+        for (Usuario usuario : listaDeUsuarios){
+            if (usuario.idAcesso.equals(idParaDeletar)){
+                usuarioParaDeletar = usuario;
+
+                if (usuarioParaDeletar !=null){
+                    listaDeUsuarios.remove(usuarioParaDeletar);
+                    System.out.println("Usuário deletado com sucesso.");
+
+                }else {
+                    System.out.println("Usuário com o ID " + idParaDeletar + " não existe. Tente digitar um ID existente.");
+                }
+            }
+        }
+    }
+
+
 
 }
 

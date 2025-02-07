@@ -53,7 +53,7 @@ public class ControleDeAcesso {
         do {
             String menu = """
                     _________________________________________________________
-                    |   Escolha uma opção:                                  |
+                    |   Escolha uma opção:                                   |
                     |       1 - Exibir cadastro completo                     |
                     |       2 - Inserir novo cadastro                        |
                     |       3 - Atualizar cadastro por id                    |
